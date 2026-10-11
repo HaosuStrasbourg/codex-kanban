@@ -16,16 +16,16 @@
 
 需要已安装并登录的 Codex 桌面应用、可发现的官方 Codex CLI，以及 Node.js ≥22.12（包含 `node:sqlite`；本次测试版本为 Node 24.20.0）。自动同步还要求宿主支持并信任生命周期 Hook。
 
-本仓库包含已构建的 `dist/codex-pm/`。下载并解压后，在仓库根目录运行以下命令；这两步会注册插件源并安装插件，应由用户知情执行：
+本仓库包含已构建的 `dist/codex-pm/`。可直接通过 GitHub 注册插件源并安装；这两步会更新 Codex 插件状态，应由用户知情执行：
 
 ```sh
-codex plugin marketplace add .
+codex plugin marketplace add HaosuStrasbourg/codex-kanban --ref main
 codex plugin add codex-pm@codex-kanban
 ```
 
 然后在 **Codex App → 插件** 找到 **Kanban 项目管理** 并打开。宿主旧面板可能仍使用旧版本，应关闭重开；只有后台没有重新加载时才需要退出并重启应用。
 
-GitHub 仓库发布后，也可将第一条命令的 `.` 替换为实际 `owner/repo`。当前本地预览文档不代表远程仓库已经存在。
+也可以下载本仓库并解压，在仓库根目录运行 `codex plugin marketplace add .`，再执行相同的安装命令。`main` 是开发预览分支，更新前请查看验证说明。
 
 启动器查找现有 Node，不下载或安装运行时；支持 Homebrew 和常见 macOS 安装位置。自定义位置可通过插件 MCP 的 `env` 配置 `CPM_NODE_BIN`、`CPM_CODEX_BIN` 为绝对路径。配置后需重新加载插件；相关 Hook 进程也需使用相同环境。无法找到兼容 Node 时会明确报错，无法找到 Codex CLI 时项目/会话读取会报告不可用。
 
