@@ -1,0 +1,27 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "codex-pm",
+  "version": "0.3.3-preview.1",
+  "description": "在 Codex 侧栏管理项目、卡片、会话与进展。macOS 开发预览，部分原生与模型验收尚未完成。",
+  "author": {
+    "name": "Haosu"
+  },
+  "extensions": {
+    "com.openai": {
+      "hooks": "./hooks/hooks.json",
+      "interface": {
+        "displayName": "Kanban 项目管理",
+        "shortDescription": "项目、卡片、进展与人工验收",
+        "longDescription": "本机 SQLite、六状态看板与表格、跟进人及交付日期、会话绑定、进展报告与人工验收。开发预览；自动同步须单独配置并信任 Hook。",
+        "developerName": "Haosu",
+        "logo": "./assets/logo.svg",
+        "composerIcon": "./assets/logo.svg",
+        "category": "Productivity",
+        "capabilities": [
+          "Interactive"
+        ],
+        "defaultPrompt": "打开 Kanban 项目管理，查看需要我处理的卡片。"
+      }
+    }
+  }
+}

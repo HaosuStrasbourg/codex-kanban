@@ -1,0 +1,20 @@
+{
+  "name": "codex-kanban",
+  "interface": {
+    "displayName": "Codex Kanban"
+  },
+  "plugins": [
+    {
+      "name": "codex-pm",
+      "source": {
+        "source": "local",
+        "path": "./dist/codex-pm"
+      },
+      "policy": {
+        "installation": "AVAILABLE",
+        "authentication": "ON_INSTALL"
+      },
+      "category": "Productivity"
+    }
+  ]
+}

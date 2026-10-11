@@ -1,0 +1,10 @@
+{
+  "description": "项目管理自动同步；默认关闭，信任与范围许可均需确认。持续模式仅处理已绑定会话的回合标识，不保存消息全文或读取 transcript。",
+  "hooks": {
+    "SessionStart": [{ "hooks": [{ "type": "command", "command": "/bin/sh \"${PLUGIN_ROOT}/launch.sh\" hook", "timeout": 3 }] }],
+    "UserPromptSubmit": [{ "hooks": [{ "type": "command", "command": "/bin/sh \"${PLUGIN_ROOT}/launch.sh\" hook", "timeout": 3 }] }],
+    "PreToolUse": [{ "matcher": "^mcp__codex_pm__cpm_report$", "hooks": [{ "type": "command", "command": "/bin/sh \"${PLUGIN_ROOT}/launch.sh\" hook", "timeout": 3 }] }],
+    "Stop": [{ "hooks": [{ "type": "command", "command": "/bin/sh \"${PLUGIN_ROOT}/launch.sh\" hook", "timeout": 3 }] }],
+    "Interrupt": [{ "hooks": [{ "type": "command", "command": "/bin/sh \"${PLUGIN_ROOT}/launch.sh\" hook", "timeout": 3 }] }]
+  }
+}
